@@ -18,8 +18,5 @@
 		</figure>
 		<?php } ?>
 		<?php the_content(); ?>
-		<?php if( $is_single ) { ?>
-		<a href="<?php the_permalink(); ?>" class="readmore">Read more &#8658;</a>
-		<?php } ?>
 	</div>
 </article>
