@@ -34,6 +34,9 @@ h3 {
 }
 p, ul {
 	font-size: 1.2em;
+	code {
+		background: $line-primary;
+	}
 }
 blockquote {
 	padding: 1em 2em;
@@ -56,6 +59,12 @@ figure {
 figcaption {
 	padding: 0 1em;
 	font-size: .9em;
+}
+pre {
+	background: #333;
+	color: #fff;
+	padding: 1em;
+	overflow: auto;
 }
 .cf:after {
 	content: "";
