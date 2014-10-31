@@ -8,6 +8,9 @@ function the_page_title() {
 	if( $title ) {
 		$title .= ' - ';
 	}
+	if( is_404() ) {
+		$title = 'Error 404 - ';
+	}
 	$title .= get_bloginfo( 'name' );
 	echo $title;
 }

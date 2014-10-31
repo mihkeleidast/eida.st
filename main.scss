@@ -122,3 +122,13 @@ pre {
 		text-decoration: underline;
 	}
 }
+.unicorn {
+	margin: 100px auto;
+	max-width: 64em;
+	padding: 0 2em;
+	svg {
+		max-width: 100%;
+		height: auto;
+		width: 100%;
+	}
+}
