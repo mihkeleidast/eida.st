@@ -2,18 +2,26 @@
   "name": "eida.st",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/mihkeleidast/eida.st#readme",
+  "bugs": {
+    "url": "https://github.com/mihkeleidast/eida.st/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mihkeleidast/eida.st.git"
   },
-  "author": {
-    "name" : "Mihkel Eidast",
-    "email" : "mihkel@eida.st",
-    "url" : "https://eida.st"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mihkeleidast/eida.st/issues"
+  "author": {
+    "name": "Mihkel Eidast",
+    "email": "mihkel@eida.st",
+    "url": "https://eida.st"
   },
-  "homepage": "https://github.com/mihkeleidast/eida.st#readme"
+  "scripts": {
+    "fractal:start": "fractal start --sync"
+  },
+  "devDependencies": {
+    "@frctl/fractal": "^1.5.2",
+    "@frctl/mandelbrot": "^1.7.0",
+    "@frctl/twig": "^1.2.4"
+  }
 }
