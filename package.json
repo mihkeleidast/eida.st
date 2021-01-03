@@ -1,0 +1,19 @@
+{
+  "name": "eida.st",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihkeleidast/eida.st.git"
+  },
+  "author": {
+    "name" : "Mihkel Eidast",
+    "email" : "mihkel@eida.st",
+    "url" : "https://eida.st"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mihkeleidast/eida.st/issues"
+  },
+  "homepage": "https://github.com/mihkeleidast/eida.st#readme"
+}
