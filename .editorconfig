@@ -1,0 +1,17 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+# Default indent style for all files is 4 spaces.
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+# JSON and YAML files indent style is 2 spaces
+[{*.{json,yml}]
+indent_style = space
+indent_size = 2
