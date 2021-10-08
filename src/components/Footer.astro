@@ -2,16 +2,18 @@
 import Container from '../components/Container.astro';
 ---
 <footer>
-    <Container>
+    <Container class="footer__inner">
         <div class="footer__inner">
-            &copy; Mihkel Eidast 2021
+            <p>&copy; Mihkel Eidast 2021</p>
         </div>
     </Container>
 </footer>
 
 <style>
     .footer__inner {
-        padding: 1em 0;
+        padding: 1em;
         border-top: 1px solid #e0e0e0;
+        margin-left: -1em;
+        margin-right: -1em;
     }
 </style>

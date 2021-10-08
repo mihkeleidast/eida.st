@@ -2,11 +2,29 @@
 import Base from '../layouts/Base.astro';
 
 import Container from '../components/Container.astro';
+import Figure from '../components/Figure.astro';
+import Prose from '../components/Prose.astro';
 
 const { url } = Astro.request;
 ---
-<Base title="mihkel eidast" currentPath={url.pathname}>
+<span />
+<Base title="links - mihkel eidast" currentPath={url.pathname}>
     <Container>
-        <p>minimal test</p>
+        <Prose>
+            <h1>Links</h1>
+            <Figure
+                src="https://eida.st/wp-content/uploads/2014/10/031-1024x768.jpg"
+                srcset="https://eida.st/wp-content/uploads/2014/10/031-1024x768.jpg 1024w, https://eida.st/wp-content/uploads/2014/10/031-300x225.jpg 300w"
+                alt="Mihkel's blue 1984 Start Šosse bicycle."
+            />
+            <p>I spend a lot of time on the internet! Here are some places you can find me:</p>
+            <p>I sometimes tweet on <a href="https://twitter.com/mihkeleidast" target="_blank" rel="noopener noreferrer">Twitter</a>.</p>
+            <p>I spend too much of time&nbsp;on <a href="https://www.facebook.com/mihkeleidast" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
+            <p>I keep track of my vinyl collection at <a href="https://discogs.com/user/mihkeleidast" target="_blank" rel="noopener noreferrer">Discogs</a>.</p>
+            <p>I take pictures of pretty things on <a href="https://instagram.com/mihkeleidast" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
+            <p>I track my movie watching history on <a href="https://letterboxd.com/risker/" target="_blank" rel="noopener noreferrer">Letterboxd</a>.</p>
+            <p>I work at <a href="https://play.ee/" target="_blank" rel="noopener noreferrer">gotoAndPlay</a>.</p>
+            <p>You can email me at <a href="mailto:mihkel@eida.st">mihkel@eida.st</a>.</p>
+        </Prose>
     </Container>
 </Base>

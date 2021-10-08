@@ -1,3 +1,24 @@
 <div class="prose">
     <slot />
 </div>
+
+<style lang="scss" global>
+    .prose {
+        > * {
+            margin: 0;
+        }
+
+        > * + * {
+            margin-top: 1.5em;
+        }
+
+        a {
+            color: #c30;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+</style>
