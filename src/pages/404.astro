@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+
+import Container from '../components/Container.astro';
+import Prose from '../components/Prose.astro';
+import Unicorn from '../components/Unicorn.astro';
+
+const { url } = Astro.request;
+---
+<span />
+<Base title="page not found - mihkel eidast" currentPath={url.pathname}>
+    <Container>
+        <Prose>
+            <h1>404 - page not found</h1>
+            <p>Sorry, but nothing's here. Charlie put some nice links in the header, maybe those will help you.</p>
+        </Prose>
+        <Unicorn />
+    </Container>
+</Base>
