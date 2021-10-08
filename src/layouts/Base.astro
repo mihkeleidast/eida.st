@@ -1,0 +1,41 @@
+---
+import Header from '../components/Header.astro';
+import Main from '../components/Main.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, currentPath } = Astro.props;
+const navItems = [
+    {
+        label: 'Home',
+        url: '/',
+    },
+    {
+        label: 'Links',
+        url: '/links',
+    },
+];
+---
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{title}</title>
+    </head>
+    <body>
+        <Header navItems={navItems} currentPath={currentPath} />
+        <Main>
+            <slot />
+        </Main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: monospace;
+    }
+</style>

@@ -17,11 +17,11 @@
     "url": "https://eida.st"
   },
   "scripts": {
-    "fractal:start": "fractal start --sync"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
-    "@frctl/fractal": "^1.5.2",
-    "@frctl/mandelbrot": "^1.7.0",
-    "@frctl/twig": "^1.2.4"
+    "astro": "^0.20.9"
   }
 }

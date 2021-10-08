@@ -1,0 +1,24 @@
+---
+const { src, srcset, alt } = Astro.props;
+---
+
+<figure>
+    <img
+        src={src}
+        srcset={srcset}
+        sizes="(max-width: 48em) 100vw, 48em"
+        alt={alt}
+    />
+</figure>
+
+<style>
+    figure {
+        margin-left: -1em;
+        margin-right: -1em;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+</style>

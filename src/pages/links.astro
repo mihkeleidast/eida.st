@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+
+import Container from '../components/Container.astro';
+
+const { url } = Astro.request;
+---
+<Base title="mihkel eidast" currentPath={url.pathname}>
+    <Container>
+        <p>minimal test</p>
+    </Container>
+</Base>

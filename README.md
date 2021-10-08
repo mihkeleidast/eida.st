@@ -1,6 +1,15 @@
-# eida.st website project
+# eida.st website
+
+This site is built with [Astro](https://astro.build/).
+
+## setup
+
+Run `npm ci`.
 
 ## development
 
-- run `npm ci`
-- run `npm run fractal:start`
+Run `npm run dev`.
+
+## build
+
+Run `npm run build`.

@@ -1,0 +1,63 @@
+---
+import Container from './Container.astro';
+
+const { navItems, currentPath } = Astro.props;
+---
+
+<header class="header">
+    <Container>
+        <nav class="navigation">
+            <ul class="navigation__list">
+                {navItems.map((item, index) => {
+                    const {label, url} = item;
+                    const current = currentPath === url;
+
+                    return (
+                        <li class="navigation__item" key={index}>
+                            <a
+                                class="navigation__link"
+                                href={url}
+                                aria-current={current ? 'page' : undefined}
+                            >
+                                {label}
+                            </a>
+                        </li>
+                    )
+                })}
+            </ul>
+        </nav>
+    </Container>
+</header>
+
+<style>
+.header {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navigation {
+    text-align: center;
+    padding: .5em 0;
+}
+
+.navigation__list {
+    padding-left: 0;
+    margin: 0;
+}
+
+.navigation__item {
+    display: inline-block;
+    margin: 0 .5em;
+}
+
+.navigation__link {
+    color: #c30;
+    display: block;
+    padding: .5em;
+    text-decoration: none;
+}
+
+.navigation__link:hover,
+.navigation__link[aria-current] {
+    text-decoration: underline;
+}
+</style>
