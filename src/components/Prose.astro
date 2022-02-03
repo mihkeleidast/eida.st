@@ -2,17 +2,17 @@
     <slot />
 </div>
 
-<style lang="scss" global>
+<style lang="scss">
     .prose {
-        > * {
+        > :global(*) {
             margin: 0;
         }
 
-        > * + * {
+        > :global(* + *) {
             margin-top: 1.5em;
         }
 
-        a {
+        :global(a) {
             color: #c30;
             text-decoration: underline;
 
