@@ -5,7 +5,7 @@ import Container from '../components/Container.astro';
 import Figure from '../components/Figure.astro';
 import Prose from '../components/Prose.astro';
 
-const { url } = Astro.request;
+const url = new URL(Astro.request.url);
 ---
 <Base title="links - mihkel eidast" currentPath={url.pathname}>
     <Container>

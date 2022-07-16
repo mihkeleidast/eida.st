@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, currentPath } = Astro.props;
+const { title, currentPath = '/' } = Astro.props;
 const navItems = [
     {
         label: 'Home',
