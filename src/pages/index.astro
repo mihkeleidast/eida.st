@@ -5,15 +5,16 @@ import Container from '../components/Container.astro';
 import Figure from '../components/Figure.astro';
 import Prose from '../components/Prose.astro';
 
-const { url } = Astro.request;
+import heroImage from '../assets/me.jpg'
+
+const url = new URL(Astro.request.url);
 ---
 <Base title="mihkel eidast" currentPath={url.pathname}>
     <Container>
         <Prose>
             <h1>Hello!</h1>
             <Figure
-                src="https://eida.st/wp-content/uploads/2014/10/21260646361_c0508bbecf_k-1-1024x678.jpg"
-                srcset="https://eida.st/wp-content/uploads/2014/10/21260646361_c0508bbecf_k-1-1024x678.jpg 1024w, https://eida.st/wp-content/uploads/2014/10/21260646361_c0508bbecf_k-1-300x199.jpg 300w, https://eida.st/wp-content/uploads/2014/10/21260646361_c0508bbecf_k-1-768x509.jpg 768w"
+                src={heroImage}
                 alt="Mihkel smiling at the camera while waiting for service at a bar."
             />
             <p>I’m mihkel. I make websites.</p>

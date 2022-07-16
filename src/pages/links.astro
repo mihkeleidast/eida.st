@@ -5,6 +5,8 @@ import Container from '../components/Container.astro';
 import Figure from '../components/Figure.astro';
 import Prose from '../components/Prose.astro';
 
+import heroImage from '../assets/bicycle.jpg'
+
 const url = new URL(Astro.request.url);
 ---
 <Base title="links - mihkel eidast" currentPath={url.pathname}>
@@ -12,8 +14,7 @@ const url = new URL(Astro.request.url);
         <Prose>
             <h1>Links</h1>
             <Figure
-                src="https://eida.st/wp-content/uploads/2014/10/031-1024x768.jpg"
-                srcset="https://eida.st/wp-content/uploads/2014/10/031-1024x768.jpg 1024w, https://eida.st/wp-content/uploads/2014/10/031-300x225.jpg 300w"
+                src={heroImage}
                 alt="Mihkel's blue 1984 Start Šosse bicycle."
             />
             <p>I spend a lot of time on the internet! Here are some places you can find me:</p>

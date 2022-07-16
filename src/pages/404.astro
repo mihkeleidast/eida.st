@@ -5,7 +5,7 @@ import Container from '../components/Container.astro';
 import Prose from '../components/Prose.astro';
 import Unicorn from '../components/Unicorn.astro';
 
-const { url } = Astro.request;
+const url = new URL(Astro.request.url);
 ---
 <Base title="page not found - mihkel eidast" currentPath={url.pathname}>
     <Container>
