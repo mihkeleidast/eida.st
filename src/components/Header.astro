@@ -13,7 +13,7 @@ const { navItems, currentPath } = Astro.props;
                     const current = currentPath === url;
 
                     return (
-                        <li class="navigation__item" key={index}>
+                        <li class="navigation__item">
                             <a
                                 class="navigation__link"
                                 href={url}
