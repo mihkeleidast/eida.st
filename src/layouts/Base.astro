@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, currentPath = '/' } = Astro.props;
+const { title } = Astro.props;
 const navItems = [
     {
         label: 'Home',
@@ -14,6 +14,8 @@ const navItems = [
         url: '/links/',
     },
 ];
+const url = new URL(Astro.request.url);
+const currentPath = url.pathname !== '/' ? url.pathname + '/' : '/';
 ---
 <html lang="en">
     <head>

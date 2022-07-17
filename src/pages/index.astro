@@ -6,10 +6,8 @@ import Figure from '../components/Figure.astro';
 import Prose from '../components/Prose.astro';
 
 import heroImage from '../assets/me.jpg'
-
-const url = new URL(Astro.request.url);
 ---
-<Base title="mihkel eidast" currentPath={url.pathname}>
+<Base title="mihkel eidast">
     <Container>
         <Prose>
             <h1>Hello!</h1>

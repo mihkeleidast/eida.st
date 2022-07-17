@@ -4,10 +4,8 @@ import Base from '../layouts/Base.astro';
 import Container from '../components/Container.astro';
 import Prose from '../components/Prose.astro';
 import Unicorn from '../components/Unicorn.astro';
-
-const url = new URL(Astro.request.url);
 ---
-<Base title="page not found - mihkel eidast" currentPath={url.pathname}>
+<Base title="page not found - mihkel eidast">
     <Container>
         <Prose>
             <h1>404 - page not found</h1>
