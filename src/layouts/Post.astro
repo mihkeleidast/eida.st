@@ -1,0 +1,26 @@
+---
+import Base from './Base.astro';
+
+import Container from '../components/Container.astro';
+import Prose from '../components/Prose.astro';
+
+const { content } = Astro.props
+---
+<Base title={`${content.title} - blog - mihkel eidast`}>
+    <Container>
+        <Prose>
+            <h1>{content.title}</h1>
+            <p class="meta">Published on <time datetime={content.date}>{new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(new Date(content.date))}</time> by <a href={`https://twitter.com/${content.authorTwitter}`}>{content.author}</a></p>
+            <slot />
+        </Prose>
+    </Container>
+</Base>
+
+<style>
+    .meta {
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        padding: .5em 0;
+        margin-top: .5em;
+    }
+</style>

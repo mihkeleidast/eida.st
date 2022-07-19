@@ -11,13 +11,14 @@ const { navItems, currentPath } = Astro.props;
                 {navItems.map((item, index) => {
                     const {label, url} = item;
                     const current = currentPath === url;
+                    const currentBlog = url === '/blog/' && currentPath.includes('blog/posts/');
 
                     return (
                         <li class="navigation__item">
                             <a
                                 class="navigation__link"
                                 href={url}
-                                aria-current={current ? 'page' : undefined}
+                                aria-current={current ? 'page' : (currentBlog ? 'true' : undefined)}
                             >
                                 {label}
                             </a>
