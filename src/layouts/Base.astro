@@ -15,7 +15,7 @@ const navItems = [
     },
 ];
 const url = new URL(Astro.request.url);
-const currentPath = url.pathname !== '/' ? url.pathname + '/' : '/';
+const currentPath = url.pathname.endsWith('/') ? url.pathname : url.pathname + '/';
 ---
 <html lang="en">
     <head>
