@@ -32,8 +32,14 @@ const data: MarkdownInstance<Post>[] = page.data;
                 {data.map((post) => (
                     <li>
                         <article>
-                            <h2><a href={post.url}>{post.frontmatter.title}</a></h2>
-                            <p>{post.frontmatter.description}</p>
+                            <Prose>
+                                <h2><a href={post.url}>{post.frontmatter.title}</a></h2>
+                                <p class="meta">Published on <time datetime={post.frontmatter.date}>{new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(new Date(post.frontmatter.date))}</time></p>
+                                <p>{post.frontmatter.description}</p>
+                                <p class="morelink">
+                                    <a href={post.url}>Read on &rarr;</a>
+                                </p>
+                            </Prose>
                         </article>
                     </li>
                 ))}
@@ -47,6 +53,17 @@ const data: MarkdownInstance<Post>[] = page.data;
     ul {
         padding: 0;
         list-style: none;
+    }
+
+    .meta {
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        padding: .5em 0;
+        margin-top: .5em;
+    }
+
+    .morelink {
+        margin-top: .5em;
     }
 </style>
 
