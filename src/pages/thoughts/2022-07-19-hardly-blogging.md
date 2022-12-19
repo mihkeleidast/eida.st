@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Post.astro
 title: Hardly blogging
-description: hello world
+description: Hello, world!
 author: mihkel
 authorMastodon: est.social/@mihkeleidast
 date: 2022-07-19T20:13:15.324Z
