@@ -1,5 +1,5 @@
 ---
-import Container from './Container.astro';
+import Container from "./Container.astro";
 
 const { navItems, currentPath } = Astro.props;
 ---
@@ -8,57 +8,67 @@ const { navItems, currentPath } = Astro.props;
     <Container>
         <nav class="navigation">
             <ul class="navigation__list">
-                {navItems.map((item, index) => {
-                    const {label, url} = item;
-                    const current = currentPath === url;
-                    const currentBlog = url === '/blog/' && currentPath.includes('blog/posts/');
+                {
+                    navItems.map((item, index) => {
+                        const { label, url } = item;
+                        const current = currentPath === url;
+                        const currentBlog =
+                            url === "/thoughts/" &&
+                            currentPath.includes("thoughts/");
 
-                    return (
-                        <li class="navigation__item">
-                            <a
-                                class="navigation__link"
-                                href={url}
-                                aria-current={current ? 'page' : (currentBlog ? 'true' : undefined)}
-                            >
-                                {label}
-                            </a>
-                        </li>
-                    )
-                })}
+                        return (
+                            <li class="navigation__item">
+                                <a
+                                    class="navigation__link"
+                                    href={url}
+                                    aria-current={
+                                        current
+                                            ? "page"
+                                            : currentBlog
+                                            ? "true"
+                                            : undefined
+                                    }
+                                >
+                                    {label}
+                                </a>
+                            </li>
+                        );
+                    })
+                }
             </ul>
         </nav>
     </Container>
 </header>
 
 <style>
-.header {
-    border-bottom: 1px solid #e0e0e0;
-}
+    .header {
+        border-bottom: 1px solid #e0e0e0;
+    }
 
-.navigation {
-    text-align: left;
-    padding: .5em 0;
-}
+    .navigation {
+        text-align: left;
+        padding: 0.5em 0;
+    }
 
-.navigation__list {
-    padding-left: 0;
-    margin: 0 -1em;
-}
+    .navigation__list {
+        padding-left: 0;
+        margin: 0 -1em;
+    }
 
-.navigation__item {
-    display: inline-block;
-    margin: 0 .5em;
-}
+    .navigation__item {
+        display: inline-block;
+        margin: 0 0.5em;
+    }
 
-.navigation__link {
-    color: #c30;
-    display: block;
-    padding: .5em;
-    text-decoration: none;
-}
+    .navigation__link {
+        color: #c30;
+        display: block;
+        padding: 0.5em;
+        text-decoration: none;
+    }
 
-.navigation__link:hover,
-.navigation__link[aria-current] {
-    text-decoration: underline;
-}
+    .navigation__link:hover,
+    .navigation__link[aria-current] {
+        text-decoration: underline;
+    }
 </style>
