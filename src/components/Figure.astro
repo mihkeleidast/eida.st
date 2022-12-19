@@ -1,12 +1,17 @@
 ---
-import { Picture } from '@astrojs/image';
+import { Picture } from "@astrojs/image/components";
 
 // FIXME: alt does not end up on <img />: https://github.com/withastro/astro/issues/3909
 const { src, alt } = Astro.props;
 ---
 
 <figure>
-    <Picture src={src} widths={[300, 768, 1024]} sizes="(max-width: 48em) 100vw, 48em" alt={alt} />
+    <Picture
+        src={src}
+        widths={[300, 768, 1024]}
+        sizes="(max-width: 48em) 100vw, 48em"
+        alt={alt}
+    />
 </figure>
 
 <style lang="scss">
