@@ -3,7 +3,7 @@ layout: ../../layouts/Post.astro
 title: Hardly blogging
 description: hello world
 author: mihkel
-authorTwitter: mihkeleidast
+authorMastodon: est.social/@mihkeleidast
 date: 2022-07-19T20:13:15.324Z
 ---
 
@@ -11,4 +11,4 @@ Hello, and welcome to my blog again. I've started blogging so many times in my l
 
 Now that I've rebuilt my site, have automatic deploys, and a modern tech stack, let's see if this time is different.
 
-What would you like to read about? Hit me up on [Twitter](https://twitter.com/mihkeleidast)!
+What would you like to read about? Hit me up on [Mastodon](https://est.social/@mihkeleidast)!

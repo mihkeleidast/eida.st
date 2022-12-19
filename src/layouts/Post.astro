@@ -19,8 +19,9 @@ const { content } = Astro.props;
                             timeStyle: "short",
                         }).format(new Date(content.date))
                     }</time
-                > by <a href={`https://twitter.com/${content.authorTwitter}`}
-                    >{content.author}</a>
+                > by <a href={`https://${content.authorMastodon}`}
+                    >{content.author}</a
+                >
             </p>
             <slot />
         </Prose>
