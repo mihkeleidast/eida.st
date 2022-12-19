@@ -13,7 +13,7 @@ interface Post {
 }
 
 export async function getStaticPaths({ paginate }) {
-    const PAGE_SIZE = 1;
+    const PAGE_SIZE = 10;
     const allPosts: MarkdownInstance<Post>[] = await Astro.glob("./*.md");
     const sortedPosts = allPosts.sort(
         (a, b) =>
@@ -55,8 +55,8 @@ const data: MarkdownInstance<Post>[] = page.data;
                                             )}
                                         </time>
                                     </p>
-                                    <p>{post.frontmatter.description}</p>
-                                    <p class="morelink">
+                                    <p>
+                                        {post.frontmatter.description}{" "}
                                         <a href={post.url}>Read on &rarr;</a>
                                     </p>
                                 </Prose>
@@ -74,6 +74,10 @@ const data: MarkdownInstance<Post>[] = page.data;
     ul {
         padding: 0;
         list-style: none;
+    }
+
+    ul > li + li {
+        margin-top: 2em;
     }
 
     .meta {
