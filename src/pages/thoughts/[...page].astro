@@ -14,7 +14,7 @@ interface Post {
 
 export async function getStaticPaths({ paginate }) {
     const PAGE_SIZE = 10;
-    const allPosts: MarkdownInstance<Post>[] = await Astro.glob("./*.md");
+    const allPosts: MarkdownInstance<Post>[] = await Astro.glob("./*.mdx");
     const sortedPosts = allPosts.sort(
         (a, b) =>
             new Date(b.frontmatter.date).getTime() -
