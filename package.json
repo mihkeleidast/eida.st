@@ -25,5 +25,8 @@
     "@astrojs/image": "^0.12.1",
     "astro": "^1.7.2",
     "sass": "^1.57.0"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.14.0"
   }
 }
