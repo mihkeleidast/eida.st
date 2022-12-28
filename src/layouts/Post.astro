@@ -17,6 +17,7 @@ const { content } = Astro.props;
                         new Intl.DateTimeFormat("en-US", {
                             dateStyle: "full",
                             timeStyle: "short",
+                            timeZone: "Europe/Tallinn",
                         }).format(new Date(content.date))
                     }</time
                 > by <a href={`https://${content.authorMastodon}`}
