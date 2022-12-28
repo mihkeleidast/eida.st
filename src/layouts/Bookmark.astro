@@ -1,0 +1,37 @@
+---
+import Base from "./Base.astro";
+
+import Container from "../components/Container.astro";
+import Prose from "../components/Prose.astro";
+
+const { content } = Astro.props;
+---
+
+<Base title={`${content.title} - bookmarks - mihkel eidast`}>
+    <Container>
+        <Prose>
+            <h1>{content.title}</h1>
+            <p class="meta">
+                Bookmarked on <time datetime={content.date}
+                    >{
+                        new Intl.DateTimeFormat("en-US", {
+                            dateStyle: "full",
+                            timeStyle: "short",
+                        }).format(new Date(content.date))
+                    }</time
+                >
+            </p>
+            <slot />
+            <p><a href={content.link}>Read the original &rarr;</a></p>
+        </Prose>
+    </Container>
+</Base>
+
+<style>
+    .meta {
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 0.5em 0;
+        margin-top: 0.5em;
+    }
+</style>
