@@ -5,16 +5,30 @@ import Container from "../components/Container.astro";
 <footer>
     <Container class="footer__inner">
         <div class="footer__inner">
-            <p>&copy; Mihkel Eidast 2022-2023</p>
+            <p>
+                &copy; Mihkel Eidast 2022-2023. Found a typo? <a
+                    href="https://github.com/mihkeleidast/eida.st"
+                    >Pull request welcome!</a
+                >
+            </p>
         </div>
     </Container>
 </footer>
 
-<style>
+<style lang="scss">
     .footer__inner {
         padding: 1em;
         border-top: 1px solid #e0e0e0;
         margin-left: -1em;
         margin-right: -1em;
+
+        :global(a) {
+            color: #c30;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 </style>
