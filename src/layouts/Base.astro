@@ -1,39 +1,57 @@
 ---
-import Header from '../components/Header.astro';
-import Main from '../components/Main.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Main from "../components/Main.astro";
+import Footer from "../components/Footer.astro";
 
 const { title } = Astro.props;
 const navItems = [
     {
-        label: 'Home',
-        url: '/',
+        label: "Home",
+        url: "/",
     },
     {
-        label: 'Thoughts',
-        url: '/thoughts/',
+        label: "Thoughts",
+        url: "/thoughts/",
     },
     {
-        label: 'Links',
-        url: '/links/',
+        label: "Links",
+        url: "/links/",
     },
 ];
 const url = new URL(Astro.request.url);
-const currentPath = url.pathname.endsWith('/') ? url.pathname : url.pathname + '/';
+const currentPath = url.pathname.endsWith("/")
+    ? url.pathname
+    : url.pathname + "/";
 ---
+
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc3300">
-        <link rel="shortcut icon" href="/favicon.ico">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-config" content="/browserconfig.xml">
-        <meta name="theme-color" content="#ffffff">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#cc3300" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="me" href="https://est.social/@mihkeleidast" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="theme-color" content="#ffffff" />
         <title>{title}</title>
     </head>
     <body>
