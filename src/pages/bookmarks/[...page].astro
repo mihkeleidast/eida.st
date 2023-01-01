@@ -61,6 +61,7 @@ const data: MarkdownInstance<Post>[] = page.data;
                                             {new Intl.DateTimeFormat("en-US", {
                                                 dateStyle: "full",
                                                 timeStyle: "short",
+                                                timeZone: "Europe/Tallinn",
                                             }).format(
                                                 new Date(post.frontmatter.date)
                                             )}
