@@ -15,7 +15,9 @@ interface Post {
 
 export async function getStaticPaths({ paginate }) {
     const PAGE_SIZE = 10;
-    const allPosts: MarkdownInstance<Post>[] = await Astro.glob("./*.mdx");
+    const allPosts: MarkdownInstance<Post>[] = await Astro.glob(
+        "./_content/*.mdx"
+    );
     const sortedPosts = allPosts.sort(
         (a, b) =>
             new Date(b.frontmatter.date).getTime() -
@@ -45,8 +47,12 @@ const data: MarkdownInstance<Post>[] = page.data;
                             <article>
                                 <Prose>
                                     <h2>
-                                        <a href={post.url}>
-                                            {post.frontmatter.title}
+                                        <a
+                                            href={post.frontmatter.link}
+                                            rel="noopener noreferrer"
+                                            class="titlelink"
+                                        >
+                                            &#10547; {post.frontmatter.title}
                                         </a>
                                     </h2>
                                     <p class="meta">
@@ -60,9 +66,13 @@ const data: MarkdownInstance<Post>[] = page.data;
                                             )}
                                         </time>
                                     </p>
+                                    <post.Content />
                                     <p>
                                         {post.frontmatter.description}{" "}
-                                        <a href={post.frontmatter.link}>
+                                        <a
+                                            href={post.frontmatter.link}
+                                            rel="noopener noreferrer"
+                                        >
                                             Read the original &rarr;
                                         </a>
                                     </p>
@@ -77,7 +87,7 @@ const data: MarkdownInstance<Post>[] = page.data;
     </Container>
 </Base>
 
-<style>
+<style lang="scss">
     ul {
         padding: 0;
         list-style: none;
@@ -96,5 +106,13 @@ const data: MarkdownInstance<Post>[] = page.data;
 
     .morelink {
         margin-top: 0.5em;
+    }
+
+    h2 .titlelink {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 </style>
