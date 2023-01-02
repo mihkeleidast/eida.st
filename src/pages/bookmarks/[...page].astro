@@ -1,0 +1,119 @@
+---
+import Base from "../../layouts/Base.astro";
+
+import Container from "../../components/Container.astro";
+import Prose from "../../components/Prose.astro";
+import { MarkdownInstance } from "astro";
+import Paginator from "../../components/Paginator.astro";
+
+interface Post {
+    date: string;
+    title: string;
+    description: string;
+    link: string;
+}
+
+export async function getStaticPaths({ paginate }) {
+    const PAGE_SIZE = 10;
+    const allPosts: MarkdownInstance<Post>[] = await Astro.glob(
+        "./_content/*.mdx"
+    );
+    const sortedPosts = allPosts.sort(
+        (a, b) =>
+            new Date(b.frontmatter.date).getTime() -
+            new Date(a.frontmatter.date).getTime()
+    );
+
+    return paginate(sortedPosts, {
+        pageSize: PAGE_SIZE,
+    });
+}
+const { page } = Astro.props;
+const data: MarkdownInstance<Post>[] = page.data;
+---
+
+<Base title="bookmarks - mihkel eidast">
+    <Container>
+        <Prose>
+            <h1>Bookmarks</h1>
+            <p>
+                A record of some of the things that resonate with me on the
+                internet, and why.
+            </p>
+            <ul>
+                {
+                    data.map((post) => (
+                        <li>
+                            <article>
+                                <Prose>
+                                    <h2>
+                                        <a
+                                            href={post.frontmatter.link}
+                                            rel="noopener noreferrer"
+                                            class="titlelink"
+                                        >
+                                            &#10547; {post.frontmatter.title}
+                                        </a>
+                                    </h2>
+                                    <p class="meta">
+                                        Bookmarked on{" "}
+                                        <time datetime={post.frontmatter.date}>
+                                            {new Intl.DateTimeFormat("en-US", {
+                                                dateStyle: "full",
+                                                timeStyle: "short",
+                                                timeZone: "Europe/Tallinn",
+                                            }).format(
+                                                new Date(post.frontmatter.date)
+                                            )}
+                                        </time>
+                                    </p>
+                                    <post.Content />
+                                    <p>
+                                        {post.frontmatter.description}{" "}
+                                        <a
+                                            href={post.frontmatter.link}
+                                            rel="noopener noreferrer"
+                                        >
+                                            Read the original &rarr;
+                                        </a>
+                                    </p>
+                                </Prose>
+                            </article>
+                        </li>
+                    ))
+                }
+            </ul>
+            <Paginator page={page} />
+        </Prose>
+    </Container>
+</Base>
+
+<style lang="scss">
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    ul > li + li {
+        margin-top: 2em;
+    }
+
+    .meta {
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 0.5em 0;
+        margin-top: 0.5em;
+    }
+
+    .morelink {
+        margin-top: 0.5em;
+    }
+
+    h2 .titlelink {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+</style>
