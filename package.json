@@ -22,10 +22,10 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^4.16.18",
-    "sass": "^1.57.0"
+    "astro": "^5.11.0",
+    "sass": "^1.89.2"
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.3.1"
+    "@astrojs/mdx": "^4.3.0"
   }
 }
